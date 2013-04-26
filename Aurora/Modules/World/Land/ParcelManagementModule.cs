@@ -1527,7 +1527,7 @@ namespace Aurora.Modules.Land
 
                     if (land.LandData.IsGroupOwned)
                     {
-                        string GroupName = "(error…)";
+                        string GroupName = "(error...)";
 
                         IGroupsModule groups = m_scene.RequestModuleInterface<IGroupsModule>();
 
