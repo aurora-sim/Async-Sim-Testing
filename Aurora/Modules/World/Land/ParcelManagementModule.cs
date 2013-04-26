@@ -1567,9 +1567,9 @@ namespace Aurora.Modules.Land
                         ~(uint)
                          (ParcelFlags.ForSale | ParcelFlags.ForSaleObjects | ParcelFlags.SellParcelObjects | ParcelFlags.AllowDamage | ParcelFlags.UseAccessList | ParcelFlags.UseAccessGroup | ParcelFlags.UseBanList | ParcelFlags.UsePassList |
                           ParcelFlags.ShowDirectory | ParcelFlags.AllowDeedToGroup | ParcelFlags.ContributeWithDeed | ParcelFlags.AllowTerraform | ParcelFlags.ShowDirectory |
-						  ParcelFlags.AllowAPrimitiveEntry | ParcelFlags.CreateObjects | ParcelFlags.RestrictPushObject | ParcelFlags.UseEstateVoiceChan);
-					
-					land.LandData.Flags |= (uint)(ParcelFlags.SoundLocal | ParcelFlags.AllowVoiceChat | ParcelFlags.AllowLandmark | ParcelFlags.AllowOtherScripts | ParcelFlags.AllowGroupScripts | ParcelFlags.AllowGroupObjectEntry | ParcelFlags.CreateGroupObjects);
+                          ParcelFlags.AllowAPrimitiveEntry | ParcelFlags.CreateObjects | ParcelFlags.RestrictPushObject | ParcelFlags.AllowDeedToGroup | ParcelFlags.DenyAgeUnverified | ParcelFlags.DenyAnonymous);
+
+                    land.LandData.Flags |= (uint)(ParcelFlags.SoundLocal | ParcelFlags.AllowVoiceChat | ParcelFlags.AllowLandmark | ParcelFlags.AllowFly | ParcelFlags.AllowOtherScripts | ParcelFlags.AllowGroupScripts | ParcelFlags.AllowGroupObjectEntry | ParcelFlags.CreateGroupObjects | ParcelFlags.UseEstateVoiceChan);
 
                     m_hasSentParcelOverLay.Clear(); //Clear everyone out
                     m_scene.ForEachClient(SendParcelOverlay);
