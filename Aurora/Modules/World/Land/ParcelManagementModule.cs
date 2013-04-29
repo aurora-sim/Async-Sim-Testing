@@ -1523,11 +1523,11 @@ namespace Aurora.Modules.Land
                 {
                     UserAccount CurrentAgent = m_scene.UserAccountService.GetUserAccount(null, remote_client.AgentId);
 
-                    string AbanadonDate = DateTime.Now.ToString("M\\/dd\\/yyyy");
+                    string AbandonmentDate = DateTime.Now.ToString("M\\/dd\\/yyyy");
 
                     if (land.LandData.IsGroupOwned)
                     {
-                        string GroupName = "(error...)";
+                        string GroupName = "[Unknown Group]";
 
                         IGroupsModule groups = m_scene.RequestModuleInterface<IGroupsModule>();
 
@@ -1540,22 +1540,22 @@ namespace Aurora.Modules.Land
                             }
                         }
 
-                        land.LandData.Description = "Land owned by " + GroupName + " (group) was abandoned by " + CurrentAgent.Name + " on " + AbanadonDate;
+                        land.LandData.Description = "Land owned by the group " + GroupName + " was abandoned by " + CurrentAgent.Name + " on " + AbandonmentDate;
                     }
                     else
                     {
                         if (remote_client.AgentId == land.LandData.OwnerID)
                         {
-                            land.LandData.Description = "Land abandoned by " + CurrentAgent.Name + " on " + AbanadonDate;
+                            land.LandData.Description = "Land abandoned by " + CurrentAgent.Name + " on " + AbandonmentDate;
                         }
                         else
                         {
                             UserAccount ParcelOwner = m_scene.UserAccountService.GetUserAccount(null, land.LandData.OwnerID);
-                            land.LandData.Description = "Land owned by " + ParcelOwner.Name + " was abandoned by " + CurrentAgent.Name + " on " + AbanadonDate;
+                            land.LandData.Description = "Land owned by " + ParcelOwner.Name + " was abandoned by " + CurrentAgent.Name + " on " + AbandonmentDate;
                         }
                     }
 
-                    land.LandData.Name = "Abandoned Land " + AbanadonDate;
+                    land.LandData.Name = "Abandoned Land " + AbandonmentDate;
                     
                     land.LandData.OwnerID = m_scene.RegionInfo.EstateSettings.EstateOwner;
                     land.LandData.AuctionID = 0; //This must be reset!
