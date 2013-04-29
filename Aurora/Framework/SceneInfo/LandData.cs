@@ -57,10 +57,9 @@ namespace Aurora.Framework.SceneInfo
         private int _dwell;
 
         private uint _flags = (uint) ParcelFlags.AllowFly | (uint) ParcelFlags.AllowLandmark |
-                              (uint) ParcelFlags.AllowAPrimitiveEntry |
-                              (uint) ParcelFlags.AllowDeedToGroup | (uint) ParcelFlags.AllowTerraform |
-                              (uint) ParcelFlags.CreateObjects | (uint) ParcelFlags.AllowOtherScripts |
-                              (uint) ParcelFlags.SoundLocal | (uint) ParcelFlags.AllowVoiceChat;
+                              (uint) ParcelFlags.AllowAPrimitiveEntry | (uint) ParcelFlags.CreateObjects |
+							  (uint) ParcelFlags.AllowOtherScripts | (uint) ParcelFlags.SoundLocal |
+                              (uint) ParcelFlags.AllowVoiceChat | (uint) ParcelFlags.UseEstateVoiceChan;
 
         private UUID _globalID = UUID.Zero;
         private UUID _groupID = UUID.Zero;
